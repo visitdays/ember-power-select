@@ -11,23 +11,24 @@
   registerAPI=(action "registerAPI")
   renderInPlace=(readonly renderInPlace)
   verticalPosition=(readonly verticalPosition)
-  as |dropdown|}}
+  disabled=(readonly disabled)
+  ...attributes as |dropdown|}}
 
   {{#dropdown.trigger
     role=(readonly triggerRole)
     tagName=(readonly _triggerTagName)
     ariaDescribedBy=(readonly ariaDescribedBy)
     ariaInvalid=(readonly ariaInvalid)
+    ariaRequired=(readonly required)
     ariaLabel=(readonly ariaLabel)
     ariaLabelledBy=(readonly ariaLabelledBy)
-    ariaRequired=(readonly required)
     class=(readonly concatenatedTriggerClasses)
     id=(readonly triggerId)
     eventType="mousedown"
     onKeyDown=(action "onTriggerKeydown")
     onFocus=(action "onTriggerFocus")
     onBlur=(action "onTriggerBlur")
-  }}
+    tabindex={{and (not disabled) (or tabindex "0")}}
     {{#component triggerComponent
       allowClear=(readonly allowClear)
       buildSelection=(readonly buildSelection)
@@ -39,6 +40,8 @@
       onInput=(action "onInput")
       placeholder=(readonly placeholder)
       placeholderComponent=(readonly placeholderComponent)
+      ariaLabel=(readonly ariaLabel)
+      ariaLabelledBy=(readonly ariaLabelledBy)
       onKeydown=(action "onKeydown")
       searchEnabled=(readonly searchEnabled)
       searchField=(readonly searchField)
@@ -70,12 +73,21 @@
       {{component searchMessageComponent
         searchMessage=(readonly searchMessage)
         select=(readonly publicAPI)
+        ariaLabel=(readonly ariaLabel)
+        ariaLabelledBy=(readonly ariaLabelledBy)
       }}
     {{else if mustShowNoMessages}}
       {{#if (hasBlock "inverse")}}
         {{yield to="inverse"}}
       {{else if noMatchesMessage}}
-        <ul class="ember-power-select-options" role="listbox">
+           <ul
+             class="ember-power-select-options"
+             role="listbox"
+             id={{listboxId}}
+             ariaLabel={{readonly ariaLabel}}
+             ariaLabelledBy={{readonly ariaLabelledBy}}
+           >
+
           <li class="ember-power-select-option ember-power-select-option--no-matches-message" role="option">
             {{noMatchesMessage}}
           </li>

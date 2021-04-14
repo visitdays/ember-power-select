@@ -2,12 +2,13 @@
   <div class="ember-power-select-search">
     <input type="search" autocomplete="off"
       autocorrect="off" autocapitalize="off"
-      spellcheck="false" role="combobox"
+      spellcheck="false"
       class="ember-power-select-search-input"
       value={{select.searchText}}
       aria-controls={{listboxId}}
-      aria-owns={{listboxId}}
       placeholder={{searchPlaceholder}}
+      ariaLabel={{ariaLabel}}
+      ariaLabelledBy={{ariaLabelledBy}}
       oninput={{onInput}}
       onfocus={{onFocus}}
       onblur={{onBlur}}
