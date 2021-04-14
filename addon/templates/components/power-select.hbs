@@ -28,7 +28,8 @@
     onKeyDown=(action "onTriggerKeydown")
     onFocus=(action "onTriggerFocus")
     onBlur=(action "onTriggerBlur")
-    tabindex={{and (not disabled) (or tabindex "0")}}
+    tabindex=(and (not disabled) (or tabindex "0"))
+  }}
     {{#component triggerComponent
       allowClear=(readonly allowClear)
       buildSelection=(readonly buildSelection)
