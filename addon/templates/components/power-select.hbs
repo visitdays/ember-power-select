@@ -11,7 +11,6 @@
   registerAPI=(action "registerAPI")
   renderInPlace=(readonly renderInPlace)
   verticalPosition=(readonly verticalPosition)
-  disabled=(readonly disabled)
   as |dropdown|}}
 
   {{#dropdown.trigger
@@ -28,7 +27,6 @@
     onKeyDown=(action "onTriggerKeydown")
     onFocus=(action "onTriggerFocus")
     onBlur=(action "onTriggerBlur")
-    tabindex=(readonly tabindex)}}
     {{#component triggerComponent
       allowClear=(readonly allowClear)
       buildSelection=(readonly buildSelection)
@@ -54,6 +52,10 @@
     {{component beforeOptionsComponent
       extra=(readonly extra)
       listboxId=(readonly optionsId)
+      ariaDescribedBy=(readonly ariaDescribedBy)
+      ariaInvalid=(readonly ariaInvalid)
+      ariaLabel=(readonly ariaLabel)
+      ariaLabelledBy=(readonly ariaLabelledBy)
       onInput=(action "onInput")
       onKeydown=(action "onKeydown")
       searchEnabled=(readonly searchEnabled)
