@@ -15,6 +15,7 @@
   renderInPlace=(readonly renderInPlace)
   verticalPosition=(readonly verticalPosition)
   disabled=(readonly disabled)
+  tabindex="0"
   as |dropdown|}}
 
   {{#dropdown.trigger
@@ -39,6 +40,7 @@
       extra=(readonly extra)
       listboxId=(readonly optionsId)
       loadingMessage=(readonly loadingMessage)
+      tabindex="0"
       onFocus=(action "onFocus")
       onBlur=(action "onBlur")
       onInput=(action "onInput")
@@ -89,6 +91,7 @@
            <ul
              class="ember-power-select-options"
              role="listbox"
+             tabindex="0"
              aria-activedescendant={{listboxId}}
              id={{listboxId}}
              aria-describedby={{readonly ariaDescribedBy}}

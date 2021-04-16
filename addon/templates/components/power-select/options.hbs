@@ -29,7 +29,8 @@
       aria-describedby={{ariaDescribedBy}}
       aria-current="{{eq opt select.highlighted}}"
       data-option-index="{{groupIndex}}{{index}}"
-      role="option">
+      role="option"
+      tabindex="0">
       {{yield opt select}}
     </li>
   {{/if}}
