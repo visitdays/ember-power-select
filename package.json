@@ -39,7 +39,7 @@
     "vendor"
   ],
   "dependencies": {
-    "ember-basic-dropdown": "^0.34.0",
+    "ember-basic-dropdown": "git://github.com/visitdays/ember-basic-dropdown.git#wai-aria-powerselect",
     "ember-cli-babel": "^6.10.0",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-concurrency": "^0.8.12",
