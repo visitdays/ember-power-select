@@ -6,6 +6,9 @@
   initiallyOpened=(readonly initiallyOpened)
   matchTriggerWidth=(readonly matchTriggerWidth)
   preventScroll=(readonly preventScroll)
+  aria-describedby=(readonly ariaDescribedBy)
+  aria-label=(readonly ariaLabel)
+  aria-labelledby=(readonly ariaLabelledBy)
   onClose=(action "onClose")
   onOpen=(action "onOpen")
   registerAPI=(action "registerAPI")
@@ -17,11 +20,11 @@
   {{#dropdown.trigger
     role=(readonly triggerRole)
     tagName=(readonly _triggerTagName)
-    ariaDescribedBy=(readonly ariaDescribedBy)
+    aria-describedby=(readonly ariaDescribedBy)
     ariaInvalid=(readonly ariaInvalid)
     ariaRequired=(readonly required)
-    ariaLabel=(readonly ariaLabel)
-    ariaLabelledBy=(readonly ariaLabelledBy)
+    aria-label=(readonly ariaLabel)
+    aria-labelledby=(readonly ariaLabelledBy)
     class=(readonly concatenatedTriggerClasses)
     id=(readonly triggerId)
     eventType="mousedown"
@@ -41,8 +44,9 @@
       onInput=(action "onInput")
       placeholder=(readonly placeholder)
       placeholderComponent=(readonly placeholderComponent)
-      ariaLabel=(readonly ariaLabel)
-      ariaLabelledBy=(readonly ariaLabelledBy)
+      aria-describedby=(readonly ariaDescribedBy)
+      aria-label=(readonly ariaLabel)
+      aria-labelledby=(readonly ariaLabelledBy)
       onKeydown=(action "onKeydown")
       searchEnabled=(readonly searchEnabled)
       searchField=(readonly searchField)
@@ -57,10 +61,10 @@
     {{component beforeOptionsComponent
       extra=(readonly extra)
       listboxId=(readonly optionsId)
-      ariaDescribedBy=(readonly ariaDescribedBy)
+      aria-describedby=(readonly ariaDescribedBy)
       ariaInvalid=(readonly ariaInvalid)
-      ariaLabel=(readonly ariaLabel)
-      ariaLabelledBy=(readonly ariaLabelledBy)
+      aria-label=(readonly ariaLabel)
+      aria-labelledby=(readonly ariaLabelledBy)
       onInput=(action "onInput")
       onKeydown=(action "onKeydown")
       searchEnabled=(readonly searchEnabled)
@@ -74,8 +78,9 @@
       {{component searchMessageComponent
         searchMessage=(readonly searchMessage)
         select=(readonly publicAPI)
+        aria-describedby=(readonly ariaDescribedBy)
         ariaLabel=(readonly ariaLabel)
-        ariaLabelledBy=(readonly ariaLabelledBy)
+        aria-labelledby=(readonly ariaLabelledBy)
       }}
     {{else if mustShowNoMessages}}
       {{#if (hasBlock "inverse")}}
@@ -84,11 +89,12 @@
            <ul
              class="ember-power-select-options"
              role="listbox"
+             aria-activedescendant={{listboxId}}
              id={{listboxId}}
-             ariaLabel={{readonly ariaLabel}}
-             ariaLabelledBy={{readonly ariaLabelledBy}}
+             aria-describedby={{readonly ariaDescribedBy}}
+             aria-label={{readonly ariaLabel}}
+             aria-labelledby={{readonly ariaLabelledBy}}
            >
-
           <li class="ember-power-select-option ember-power-select-option--no-matches-message" role="option">
             {{noMatchesMessage}}
           </li>
